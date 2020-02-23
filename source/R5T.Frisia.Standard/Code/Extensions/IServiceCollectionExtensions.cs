@@ -21,7 +21,7 @@ namespace R5T.Frisia.Standard
         {
             services.AddSuebiaAwsEc2ServerSecretsProvider(
                 services.AddHardCodedAwsEc2ServerSecretsFileNameProviderAction(),
-                services.AddSecretsFilePathProviderAction(),
+                services.AddSecretsDirectoryFilePathProviderAction(),
                 services.AddJsonFileSerializationOperatorAction(),
                 addAwsEc2ServerHostFriendlyNameProvider);
 
