@@ -17,7 +17,7 @@ namespace R5T.Frisia.Standard
         /// Adds the <see cref="IAwsEc2ServerSecretsProvider"/> service.
         /// </summary>
         public static IServiceCollection AddAwsEc2ServerSecretsProvider(this IServiceCollection services,
-            ServiceAction<IAwsEc2ServerHostFriendlyNameProvider> addAwsEc2ServerHostFriendlyNameProvider)
+            IServiceAction<IAwsEc2ServerHostFriendlyNameProvider> addAwsEc2ServerHostFriendlyNameProvider)
         {
             services.AddSuebiaAwsEc2ServerSecretsProvider(
                 services.AddHardCodedAwsEc2ServerSecretsFileNameProviderAction(),
@@ -31,8 +31,8 @@ namespace R5T.Frisia.Standard
         /// <summary>
         /// Adds the <see cref="IAwsEc2ServerSecretsProvider"/> service.
         /// </summary>
-        public static ServiceAction<IAwsEc2ServerSecretsProvider> AddAwsEc2ServerSecretsProviderAction(this IServiceCollection services,
-            ServiceAction<IAwsEc2ServerHostFriendlyNameProvider> addAwsEc2ServerHostFriendlyNameProvider)
+        public static IServiceAction<IAwsEc2ServerSecretsProvider> AddAwsEc2ServerSecretsProviderAction(this IServiceCollection services,
+            IServiceAction<IAwsEc2ServerHostFriendlyNameProvider> addAwsEc2ServerHostFriendlyNameProvider)
         {
             var serviceAction = new ServiceAction<IAwsEc2ServerSecretsProvider>(() => services.AddAwsEc2ServerSecretsProvider(addAwsEc2ServerHostFriendlyNameProvider));
             return serviceAction;
