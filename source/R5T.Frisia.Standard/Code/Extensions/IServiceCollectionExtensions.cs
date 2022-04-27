@@ -19,8 +19,8 @@ namespace R5T.Frisia.Standard
         public static IServiceCollection AddAwsEc2ServerSecretsProvider(this IServiceCollection services,
             IServiceAction<IAwsEc2ServerHostFriendlyNameProvider> addAwsEc2ServerHostFriendlyNameProvider)
         {
-            services.AddSuebiaAwsEc2ServerSecretsProvider(
-                services.AddHardCodedAwsEc2ServerSecretsFileNameProviderAction(),
+            services.AddSuebiaAwsEc2ServerSecretsProvider_Old(
+                services.AddHardCodedAwsEc2ServerSecretsFileNameProviderAction_Old(),
                 services.AddSecretsDirectoryFilePathProviderAction(),
                 services.AddJsonFileSerializationOperatorAction(),
                 addAwsEc2ServerHostFriendlyNameProvider);
